@@ -1,0 +1,161 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.main {
+    height: 100vh;
+    width: 100%;
+    background-color: #b1b9d4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box {
+    height: 230px;
+    width: 706px;
+    box-shadow: #000000 0px 0px 10px 0px;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    gap: 20px;
+    padding: 22px;
+}
+
+.image {
+    flex: 2;
+    box-shadow: 0 0 10px rgb(0 0 0 / 30%);
+    border-radius: 10px;
+    overflow: hidden;
+    background-repeat: no-repeat;
+}
+
+.image img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    transition: transform 0.2s;
+    
+}
+
+.image:hover > img {
+    transform: scale(1.5);
+}
+
+.param {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+}
+
+.param h2 {
+    font-weight: 900;
+    font-size: 32px;
+}
+
+.param button {
+    width: 100px;
+    border: none;
+    outline: none;
+    height: 40px;
+    cursor: pointer;
+    border-radius: 10px;
+    background-color: black;
+    color: white;
+    transition: background-color 0.2s;
+}
+
+.param button:hover {
+    background-color: gray;
+}
+
+.loadingImage {
+    flex: 2;
+    position: relative;
+    box-shadow: 0 0 10px rgb(0 0 0 / 30%);
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #c4c4c4;
+}
+
+.loadingImage::after {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.5), transparent);
+    animation: runout 0.8s linear 0.2s 5 normal;
+}
+
+.loadingParam {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+}
+
+.loadingParam h2 {
+    position: relative;
+    height: 40px;
+    background-color: #c4c4c4;
+    border-radius: 10px;
+}
+
+.loadingParam h2::after {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.5), transparent);
+    animation: runout 0.8s linear 0.2s 5 normal;
+}
+
+.loadingParam p {
+    position: relative;
+    height: 70px;
+    background-color: #c4c4c4;
+    border-radius: 10px;
+}
+
+.loadingParam p::after {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.5), transparent);
+    animation: runout 0.8s linear 0.2s 5 normal;
+}
+
+.loadingParam button {
+    position: relative;
+    width: 100px;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+    background-color: #c4c4c4;
+}
+
+.loadingParam button::after {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0px;
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.5), transparent);
+    animation: runout 0.8s linear 0.2s 5 normal;
+}
+
+@keyframes runout {
+    to {
+        transform: translateX(100%);
+    }
+}
